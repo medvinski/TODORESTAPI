@@ -1,0 +1,246 @@
+body {
+  margin: 0;
+  font-family: 'Comic Sans MS', cursive;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #316C8D;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.App {
+  width: 700px;
+  height: 1000px;
+  border: 1px solid black;
+  border-radius: 20px;
+  padding: 20px 20px;
+  position: relative;
+  font-weight: bold;
+  font-size: 1.5rem;
+  margin-top: 100px;
+}
+
+header {
+  background-image: url("smiley.jpg");
+  background-size: cover;
+  background-position: center;
+  border-radius: 20px;
+  font-size: 4rem;
+  padding-top: 70px; /* Increase the top padding to create space for the clock */
+  padding-bottom: 10px;
+  text-align: center;
+  color: white;
+  text-shadow: 5px 5px 2px rgba(0, 0, 0, 0.5); /* Add the 3D effect using text-shadow */
+}
+
+
+button,
+.delete,
+.edit,
+.submit {
+  cursor: pointer;
+}
+
+/* List Components */
+
+.list-content {
+  margin-top: 50px;
+  height: 300px;
+  overflow: auto;
+}
+
+.list-content::-webkit-scrollbar {
+  width: 1vw;
+  margin-left: 10px;
+}
+
+.list-content::-webkit-scrollbar-track {
+  background-color: gray;
+  border-radius: 20px;
+}
+
+.list-content::-webkit-scrollbar-thumb {
+  background-color: #584394;
+  border-radius: 20px;
+}
+
+.list-content-wrapper {
+  position: relative;
+}
+
+.fa-trash {
+  position: absolute;
+  top: -28px;
+  right: 0;
+  color: rgb(12, 6, 6);
+  cursor: pointer;
+}
+
+.loading {
+  position: absolute;
+  top: -58px;
+  left: 50px;
+  font-size: medium;
+}
+
+.error {
+  position: absolute;
+  top: -58px;
+  left: 20px;
+  color: rgb(161, 7, 7);
+}
+
+.items {
+  background-color: #FFFFFF;
+  border-radius: 20px;
+  font-size: 1.2rem;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  padding: 5px 10px;
+}
+
+.editContent {
+  display: none;
+  text-align: center;
+}
+
+.editContent .btn-done {
+  background-color: rgb(16, 19, 16);
+  color: white;
+  border-radius: 50px;
+  font-weight: bold;
+}
+
+.editContent .edit {
+  margin-right: 10px;
+}
+
+.items p,
+.items form {
+  margin: 0;
+  display: inline;
+}
+
+.addTodo {
+  background-color: transparent; /* Set background color to transparent */
+  border-radius: 20px;
+  margin-top: 50px;
+  padding: 5px 10px;
+  border: none; /* Remove border */
+  outline: none;
+}
+
+form {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.addTodo form input[type=text] {
+  width: 90%;
+  border: none;
+  outline: none;
+  background-color: rgba(255, 255, 255, 0.8); /* Transparent white background */
+  border-radius: 15px;
+  padding: 8px;
+  text-align: center;
+  font-size: 1.2rem;
+  color: #000; /* Black text color */
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* Updated box shadow for 3D effect */
+}
+
+button.submit {
+  background-color: transparent;
+  border-radius: 50%;
+  color: #000; /* Black text color */
+  padding: 10px; /* Increase padding for a larger size */
+  border: none;
+  outline: none;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* Add box shadow for 3D effect */
+}
+
+button.submit i {
+  font-size: 2.5rem; /* Increase font size for a bigger arrow */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Enhance text shadow for a stronger 3D effect */
+  font-weight: bold; /* Make the arrow icon bolder */
+}
+
+.addTodo form .fa-plus {
+  color: #FFF; /* White plus icon color */
+  margin-right: 5px;
+}
+
+/* Additional Styling for Advice and Jokes */
+
+.advice-box {
+  background-color: rgba(255, 209, 220, 0.8); /* Transparent pastel pink */
+  border-radius: 15px;
+  padding: 10px;
+  margin-bottom: 60px;
+  text-align: center;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* Add 3D effect using text-shadow */
+  border: 20px solid rgba(0, 0, 0, 0.2); /* Add border */
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4); /* Updated box shadow for stronger 3D effect */
+}
+
+.joke-box {
+  background-color: rgba(199, 250, 204, 0.8); /* Transparent pastel green */
+  border-radius: 15px;
+  padding: 10px;
+  margin-top: 20px;
+  text-align: center;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* Add 3D effect using text-shadow */
+  border: 20px solid rgba(0, 0, 0, 0.2); /* Add border */
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4); /* Updated box shadow for stronger 3D effect */
+}
+
+
+.advice-box h3,
+.joke-box h3 {
+  font-size: 1rem;
+  text-align: center;
+  margin-bottom: 2px;
+}
+
+.advice-box p,
+.joke-box p {
+  font-size: 1.3rem;
+  margin: 0.1rem;
+}
+
+.clock {
+  position: absolute;
+  top: -140px; /* Adjust the top position to move the clock higher */
+  left: 0;
+  right: 0;
+  margin: auto;
+  text-align: center;
+  z-index: 9999;
+}
+.clock h3 {
+  font-size: 1.8rem;
+  color: #FFD700; /* Golden yellow color */
+  margin-bottom: 20px; /* Reduce the margin-bottom value to decrease the space */
+}
+
+.clock p {
+  font-size: 1.7rem;
+  color: #f8ecf2; /* Hot pink color */
+  text-shadow: 1px 5px 4px rgba(0, 0, 0, 0.5); /* Add a shadow effect */
+  animation: pulse 1s infinite; /* Add a pulsating animation */
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
